@@ -1,0 +1,2570 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Kompleksowy Serwis Porządkowy — Pielęgnacja Zieleni i Całoroczny Serwis Obiektów | Chełm</title>
+  <meta name="description" content="Kompleksowy Serwis Porządkowy w Chełmie i okolicach. Całoroczna pielęgnacja terenów zielonych, sprzątanie obiektów, odśnieżanie oraz mycie ciśnieniowe dachów, elewacji i kostki brukowej." />
+  <meta property="og:title" content="Kompleksowy Serwis Porządkowy — Chełm i okolice" />
+  <meta property="og:description" content="Profesjonalny, całoroczny serwis porządkowy obiektów i pielęgnacja terenów zielonych. Rzetelność, terminowość i dokładność." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" />
+
+  <!-- Szybkie wstępne połączenia (DNS & Preconnect dla błyskawicznego ładowania) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://i.ibb.co" crossorigin />
+  <link rel="dns-prefetch" href="https://i.ibb.co" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" />
+  <link rel="apple-touch-icon" href="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" />
+
+  <!-- Preload kluczowego zasobu (Logo) -->
+  <link rel="preload" as="image" href="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" fetchpriority="high" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter z display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-card: #FFFFFF;
+      --bg-main: #F6F7F5;
+      --bg-alt: #EDF0EC;
+      --text-dark: #0C120D;
+      --bg-dark-card: #141C15;
+      --green-primary: #2F8F4E;
+      --green-dark: #20693A;
+      --green-light: #4FB56E;
+      --green-glow: rgba(47, 143, 78, 0.25);
+      --text-muted: #525950;
+      --text-subtle: #8B9389;
+      --border-light: rgba(12, 18, 13, 0.08);
+      --border-dark: rgba(255, 255, 255, 0.12);
+      --border-green: rgba(47, 143, 78, 0.35);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 2px 8px rgba(12, 18, 13, 0.04);
+      --shadow-md: 0 8px 24px rgba(12, 18, 13, 0.08);
+      --nav-height: 72px;
+    }
+
+    /* Blokada poziomego scrollowania i reset styli */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    body.drawer-open {
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Przyspieszenie renderowania sekcji poniżej folda */
+    .content-lazy-render {
+      content-visibility: auto;
+      contain-intrinsic-size: 600px;
+    }
+
+    /* Badge & Labels */
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pill-badge-dark {
+      background: rgba(255, 255, 255, 0.08);
+      color: #E2E8E3;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .pill-badge-dark .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-light);
+      box-shadow: 0 0 8px var(--green-light);
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green-primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    /* Przyciski zoptymalizowane pod touch (min 44px) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 12px 26px;
+      border-radius: var(--radius-pill);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background-color: var(--green-primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(47, 143, 78, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-dark);
+    }
+
+    .btn-outline-white {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline-white:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: #FFFFFF;
+    }
+
+    .btn-outline-dark {
+      background-color: transparent;
+      color: var(--text-dark);
+      border-color: rgba(12, 18, 13, 0.3);
+    }
+
+    .btn-outline-dark:hover {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+    }
+
+    .btn-white {
+      background-color: #FFFFFF;
+      color: var(--text-dark);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-white:hover {
+      background-color: #F6F7F5;
+    }
+
+    /* Nawigacja */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 1030;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      background: rgba(12, 18, 13, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .site-nav.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+      min-width: 0;
+    }
+
+    .brand-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--green-primary);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav.scrolled .brand-name {
+      color: var(--text-dark);
+    }
+
+    .brand-tagline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green-light);
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav.scrolled .brand-tagline {
+      color: var(--green-primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.88);
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #FFFFFF;
+    }
+
+    .site-nav.scrolled .nav-link {
+      color: var(--text-dark);
+    }
+
+    .site-nav.scrolled .nav-link:hover {
+      color: var(--green-primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .nav-wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #E2E8E3;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-wa-link:hover {
+      background: rgba(47, 143, 78, 0.2);
+      border-color: var(--green-light);
+      color: #FFFFFF;
+    }
+
+    .site-nav.scrolled .nav-wa-link {
+      color: var(--text-dark);
+      border-color: var(--border-light);
+    }
+
+    .site-nav.scrolled .nav-wa-link:hover {
+      border-color: var(--green-primary);
+      color: var(--green-primary);
+    }
+
+    /* DEDYKOWANY PRZYCISK MOBILNEGO MENU NAWIGACJI */
+    .mobile-menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(47, 143, 78, 0.22);
+      border: 1.5px solid rgba(127, 216, 154, 0.5);
+      border-radius: var(--radius-pill);
+      color: #FFFFFF;
+      padding: 0 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      height: 42px;
+      min-height: 42px;
+      min-width: 44px;
+      z-index: 1020;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-menu-toggle:hover, .mobile-menu-toggle:focus-visible {
+      background: rgba(47, 143, 78, 0.38);
+      border-color: var(--green-light);
+      color: #FFFFFF;
+    }
+
+    .site-nav.scrolled .mobile-menu-toggle {
+      background: #F0F6F1;
+      border-color: var(--green-primary);
+      color: var(--green-dark);
+      box-shadow: 0 2px 8px rgba(47, 143, 78, 0.12);
+    }
+
+    .site-nav.scrolled .mobile-menu-toggle:hover,
+    .site-nav.scrolled .mobile-menu-toggle:focus-visible {
+      background: #E2ECE5;
+      border-color: var(--green-primary);
+      color: var(--green-primary);
+    }
+
+    .mobile-menu-toggle.active {
+      background: var(--green-primary);
+      border-color: var(--green-primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(47, 143, 78, 0.35);
+    }
+
+    .hamburger-icon {
+      width: 18px;
+      height: 13px;
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .hamburger-icon span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      transform-origin: center;
+    }
+
+    .mobile-menu-toggle.active .hamburger-icon span:nth-child(1) {
+      transform: translateY(5.5px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active .hamburger-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active .hamburger-icon span:nth-child(3) {
+      transform: translateY(-5.5px) rotate(-45deg);
+    }
+
+    /* Mobilny Drawer & Backdrop z przyspieszeniem GPU */
+    .mobile-drawer-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(12, 18, 13, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 1040;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      touch-action: none;
+    }
+
+    .mobile-drawer-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 88%;
+      max-width: 380px;
+      height: 100%;
+      height: 100dvh;
+      background: #FFFFFF;
+      z-index: 1050;
+      padding: 24px 24px 36px;
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate3d(100%, 0, 0);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+      box-shadow: -8px 0 28px rgba(0, 0, 0, 0.15);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+    }
+
+    .mobile-drawer.active {
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .drawer-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 24px;
+    }
+
+    .drawer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer-close-btn {
+      background: #F0F4F1;
+      border: 1px solid var(--border-light);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+
+    .drawer-close-btn:hover, .drawer-close-btn:active {
+      background: #E1E9E3;
+      color: var(--green-primary);
+      transform: scale(1.05);
+    }
+
+    .mobile-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .mobile-drawer-link {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: transparent;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .mobile-drawer-link:active, .mobile-drawer-link:hover {
+      background-color: #EDF3EE;
+      color: var(--green-primary);
+    }
+
+    .mobile-drawer-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Hero Section - czysta grafika CSS, brak ciężkich filtrów na telefonach */
+    .hero-section {
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: radial-gradient(circle at 50% 90%, #152418 0%, #0C120D 70%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-height) + 40px) 0 60px;
+      overflow: hidden;
+    }
+
+    .hero-grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center center;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .hero-glow {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 600px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(47, 143, 78, 0.25) 0%, rgba(47, 143, 78, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      color: #FFFFFF;
+      margin: 20px 0 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title .title-prefix {
+      display: block;
+      font-size: clamp(1.15rem, 2.6vw, 1.75rem);
+      font-weight: 500;
+      color: #A8B1A7;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .hero-title .title-highlight {
+      color: var(--green-light);
+      display: block;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: #C3CBC2;
+      line-height: 1.65;
+      max-width: 760px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+    }
+
+    .hero-pillars-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-bottom: 36px;
+      padding: 12px 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-pill);
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-pillar-item {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #E2E8E3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-pillar-divider {
+      width: 1px;
+      height: 16px;
+      background-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .scroll-indicator {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-subtle);
+      font-size: 0.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.2s ease;
+    }
+
+    .scroll-indicator:hover {
+      color: var(--green-light);
+    }
+
+    .scroll-indicator-icon {
+      width: 20px;
+      height: 30px;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .scroll-indicator-icon::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 6px;
+      background-color: var(--green-light);
+      border-radius: 2px;
+      animation: scrollBounce 2s infinite ease-in-out;
+    }
+
+    @keyframes scrollBounce {
+      0%, 20%, 80%, 100% {
+        transform: translate(-50%, 0);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translate(-50%, 8px);
+        opacity: 0.2;
+      }
+    }
+
+    /* Ticker Banner - zabezpieczenie overflow */
+    .ticker-bar {
+      width: 100%;
+      max-width: 100%;
+      background-color: var(--green-primary);
+      color: var(--text-dark);
+      padding: 12px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(12, 18, 13, 0.1);
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      will-change: transform;
+      animation: tickerSlide 35s linear infinite;
+    }
+
+    .ticker-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 32px;
+      padding-right: 32px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ticker-bullet {
+      opacity: 0.45;
+      font-size: 0.75rem;
+    }
+
+    @keyframes tickerSlide {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    /* Usługi */
+    .services-section {
+      padding: 90px 0;
+      background-color: var(--bg-main);
+      scroll-margin-top: calc(var(--nav-height) + 10px);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: transparent;
+      transition: background-color 0.25s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+        border-color: rgba(47, 143, 78, 0.3);
+      }
+      .service-card:hover::before {
+        background-color: var(--green-primary);
+      }
+      .service-card:hover .service-icon-wrap {
+        background: rgba(47, 143, 78, 0.12);
+        transform: scale(1.05);
+      }
+    }
+
+    .service-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .service-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: #F2F5F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.65rem;
+      border: 1px solid rgba(47, 143, 78, 0.12);
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .service-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      background: var(--bg-main);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.05em;
+    }
+
+    .service-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    .service-description {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-top: auto;
+    }
+
+    .service-card-corporate {
+      background: linear-gradient(145deg, #162419 0%, #0C120D 100%);
+      color: #FFFFFF;
+      border-color: rgba(47, 143, 78, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card-corporate::before {
+      background-color: var(--green-light);
+    }
+
+    .service-card-corporate .service-icon-wrap {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .service-card-corporate .service-number {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--green-light);
+    }
+
+    .service-card-corporate .service-title {
+      color: #FFFFFF;
+    }
+
+    .service-card-corporate .service-description {
+      color: #B5BFB4;
+    }
+
+    /* O nas */
+    .about-section {
+      background: #0C120D;
+      color: #FFFFFF;
+      padding: 95px 0;
+      position: relative;
+      text-align: center;
+      scroll-margin-top: calc(var(--nav-height) + 10px);
+      overflow: hidden;
+    }
+
+    .about-container {
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-pillars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px 0 32px;
+    }
+
+    .about-pillar-tag {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+      letter-spacing: -0.01em;
+    }
+
+    .about-pillar-tag:nth-child(1) {
+      background: rgba(255, 255, 255, 0.07);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .about-pillar-tag:nth-child(2) {
+      background: rgba(47, 143, 78, 0.18);
+      color: var(--green-light);
+      border: 1px solid rgba(79, 181, 110, 0.38);
+    }
+
+    .about-pillar-tag:nth-child(3) {
+      background: rgba(255, 255, 255, 0.07);
+      color: #E2E8E3;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .about-text {
+      font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+      color: #CCD4CC;
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    .about-quote {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, rgba(47, 143, 78, 0.25) 0%, rgba(20, 28, 21, 0.85) 100%);
+      border: 1px solid var(--border-green);
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.25);
+    }
+
+    .about-quote span {
+      color: var(--green-light);
+    }
+
+    /* Realizacje (Masonry) */
+    .portfolio-section {
+      padding: 95px 0;
+      background-color: var(--bg-main);
+      scroll-margin-top: calc(var(--nav-height) + 10px);
+    }
+
+    .masonry-gallery {
+      column-count: 4;
+      column-gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      background: var(--bg-card);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      contain: layout paint;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+      background-color: #EAECEA;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .gallery-item:hover {
+        transform: translateY(-3px);
+        border-color: rgba(47, 143, 78, 0.4);
+      }
+      .gallery-item:hover .gallery-img {
+        transform: scale(1.04);
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: linear-gradient(to top, rgba(12, 18, 13, 0.85) 0%, rgba(47, 143, 78, 0.3) 40%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .portfolio-footer-cta {
+      text-align: center;
+    }
+
+    /* Dlaczego my */
+    .why-us-section {
+      padding: 90px 0;
+      background-color: var(--bg-alt);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      scroll-margin-top: calc(var(--nav-height) + 10px);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      padding: 28px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .pillar-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(47, 143, 78, 0.3);
+      }
+    }
+
+    .pillar-icon-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: #F0F5F1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+      border: 1px solid rgba(47, 143, 78, 0.15);
+    }
+
+    .pillar-title {
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .pillar-text {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* CTA Strip */
+    .cta-strip-section {
+      background: linear-gradient(135deg, #1f5c34 0%, #122818 50%, #0C120D 100%);
+      color: #FFFFFF;
+      padding: 56px 0;
+      position: relative;
+    }
+
+    .cta-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .cta-content {
+      max-width: 640px;
+    }
+
+    .cta-title {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .cta-subtitle {
+      font-size: 1.05rem;
+      color: #CFD7CE;
+      font-weight: 300;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Kontakt */
+    .contact-section {
+      padding: 95px 0;
+      background-color: var(--bg-main);
+      scroll-margin-top: calc(var(--nav-height) + 10px);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .contact-info-panel {
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #F0F5F1;
+      border: 1px solid rgba(47, 143, 78, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .contact-meta-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-subtle);
+      margin-bottom: 2px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .contact-meta-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .contact-meta-val a:hover {
+      color: var(--green-primary);
+    }
+
+    .contact-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* B2B Card */
+    .b2b-trust-card {
+      background: radial-gradient(circle at top right, #1b2d1d 0%, #0C120D 70%);
+      color: #FFFFFF;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(47, 143, 78, 0.35);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .b2b-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(47, 143, 78, 0.2);
+      border: 1px solid var(--green-light);
+      border-radius: var(--radius-pill);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--green-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .b2b-card-title {
+      font-size: 1.75rem;
+      margin-bottom: 14px;
+      color: #FFFFFF;
+    }
+
+    .b2b-card-text {
+      color: #CCD4CC;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .b2b-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .b2b-perk-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9375rem;
+      color: #E2E8E3;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500;
+    }
+
+    .b2b-perk-check {
+      color: var(--green-light);
+      font-weight: bold;
+    }
+
+    .b2b-quote-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 18px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green-light);
+      font-style: italic;
+    }
+
+    /* Stopka */
+    .site-footer {
+      background: #0C120D;
+      color: #E2E8E3;
+      padding: 68px 0 28px;
+      border-top: 3px solid var(--green-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1.7fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-brand-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--green-primary);
+      object-fit: cover;
+    }
+
+    .footer-desc {
+      font-size: 0.9375rem;
+      color: #9BA39A;
+      line-height: 1.6;
+      max-width: 360px;
+    }
+
+    .footer-col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+    }
+
+    .footer-services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      list-style: none;
+    }
+
+    .footer-service-link {
+      font-size: 0.875rem;
+      color: #9BA39A;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-service-link:hover {
+      color: var(--green-light);
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-link {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #E2E8E3;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-phone {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-light);
+    }
+
+    .footer-contact-link:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: #798278;
+    }
+
+    .footer-bottom-slogan {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      color: var(--green-light);
+    }
+
+    /* Lekkie animacje wejścia - minimalny narzut na procesor */
+    .fade-in-up {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-in-up.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      will-change: auto;
+    }
+
+    /* RWD BREAKPOINTS */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .masonry-gallery {
+        column-count: 3;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --nav-height: 70px;
+      }
+
+      .container {
+        padding: 0 14px;
+      }
+
+      .site-nav {
+        background: rgba(12, 18, 13, 0.94);
+      }
+
+      .nav-inner {
+        gap: 10px;
+      }
+
+      .brand-link {
+        gap: 10px;
+      }
+
+      .brand-avatar {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand-name {
+        font-size: 0.9375rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.625rem;
+      }
+
+      .nav-menu, .nav-wa-link {
+        display: none;
+      }
+
+      .nav-actions {
+        gap: 8px;
+        flex-shrink: 0;
+      }
+
+      /* Przycisk mobilnego menu - stabilny, nierozciągany */
+      .site-nav .btn,
+      .nav-actions .btn,
+      .mobile-menu-toggle {
+        width: auto !important;
+        max-width: none !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        height: 42px;
+        min-height: 42px;
+        padding: 0 16px;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        border-radius: var(--radius-pill);
+        flex-shrink: 0;
+      }
+
+      /* Hero section - przestronny, un-squeezed nagłówek mobilny */
+      .hero-section {
+        padding: calc(var(--nav-height) + 32px) 0 52px;
+        min-height: auto;
+      }
+
+      .hero-title {
+        font-size: clamp(1.75rem, 6.4vw, 2.35rem);
+        line-height: 1.25;
+        letter-spacing: -0.015em;
+        margin: 18px 0 16px;
+      }
+
+      .hero-title .title-prefix {
+        font-size: clamp(1.05rem, 4vw, 1.3rem);
+        margin-bottom: 6px;
+        letter-spacing: 0;
+        line-height: 1.3;
+      }
+
+      .hero-title .title-highlight {
+        line-height: 1.22;
+        margin-top: 4px;
+      }
+
+      .hero-description {
+        font-size: 0.96rem;
+        line-height: 1.65;
+        margin: 0 auto 28px;
+        padding: 0 4px;
+      }
+
+      .hero-pillars-bar {
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 360px;
+        padding: 10px 14px;
+        margin-bottom: 32px;
+      }
+
+      .hero-pillar-item {
+        font-size: 0.8125rem;
+        padding: 4px 10px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius-pill);
+      }
+
+      .hero-pillar-divider {
+        display: none;
+      }
+
+      /* Przyciski CTA w sekcji hero - zbalansowane, nie rozciągnięte */
+      .hero-cta-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto 32px;
+      }
+
+      .hero-cta-group .btn {
+        width: auto !important;
+        max-width: 100%;
+        flex: 0 1 auto !important;
+        padding: 12px 22px;
+        font-size: 0.9375rem;
+        white-space: nowrap;
+        border-radius: var(--radius-pill);
+      }
+
+      .section-header {
+        margin: 0 auto 36px;
+      }
+
+      .section-title {
+        font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+        line-height: 1.25;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .masonry-gallery {
+        column-count: 2;
+        column-gap: 12px;
+      }
+
+      .gallery-item {
+        margin-bottom: 12px;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-strip-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-actions {
+        justify-content: center;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .brand-link {
+        gap: 8px;
+      }
+
+      .brand-avatar {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand-name {
+        font-size: 0.875rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.6rem;
+      }
+
+      .nav-actions {
+        gap: 6px;
+      }
+
+      .mobile-menu-toggle {
+        height: 40px;
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 0.78125rem;
+        gap: 6px;
+      }
+
+      .hero-cta-group {
+        gap: 10px;
+        margin: 0 auto 28px;
+      }
+
+      .hero-cta-group .btn {
+        padding: 11px 18px;
+        font-size: 0.875rem;
+      }
+
+      .masonry-gallery {
+        column-count: 1;
+      }
+
+      .contact-info-panel, .b2b-trust-card {
+        padding: 24px 18px;
+      }
+
+      .mobile-drawer-actions .btn {
+        width: 100%;
+      }
+
+      .contact-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .contact-buttons .btn {
+        width: auto !important;
+        flex: 0 1 auto !important;
+      }
+
+      .about-pillars {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .about-pillar-tag {
+        width: 100%;
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-name {
+        font-size: 0.8125rem;
+      }
+
+      .brand-tagline {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        padding: 0 12px;
+        font-size: 0.75rem;
+      }
+
+      .mobile-menu-toggle span#menuBtnText {
+        font-size: 0.71875rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAWIGACJA GŁÓWNA -->
+  <header class="site-nav" id="mainHeader">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-link" id="navBrandLink">
+        <img src="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" alt="Logo Kompleksowy Serwis Porządkowy" class="brand-avatar" width="42" height="42" fetchpriority="high" />
+        <div class="brand-meta">
+          <span class="brand-name">Serwis Porządkowy</span>
+          <span class="brand-tagline">Chełm i okolice</span>
+        </div>
+      </a>
+
+      <!-- Menu desktopowe -->
+      <nav aria-label="Nawigacja główna">
+        <ul class="nav-menu">
+          <li><a href="#uslugi" class="nav-link">Usługi</a></li>
+          <li><a href="#o-nas" class="nav-link">O nas</a></li>
+          <li><a href="#realizacje" class="nav-link">Realizacje</a></li>
+          <li><a href="#dlaczego-my" class="nav-link">Dlaczego my</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- Przyciski akcji oraz mobilny przycisk menu -->
+      <div class="nav-actions">
+        <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer" class="nav-wa-link" id="navWaLink">
+          <span>💬</span> WhatsApp
+        </a>
+
+        <!-- WYRAŹNY PRZYCISK MOBILNEGO MENU -->
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Otwórz menu nawigacji" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span id="menuBtnText">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- TŁO PRZYKRYWAJĄCE (BACKDROP) DLA MOBILNEGO MENU -->
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- MOBILNE MENU NAWIGACJI (SZUFLADA / DRAWER) -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Menu mobilne">
+    <div class="drawer-top-bar">
+      <div class="drawer-brand">
+        <img src="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" alt="Logo" class="brand-avatar" width="38" height="38" loading="lazy" />
+        <div class="brand-meta">
+          <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">Menu serwisu</span>
+          <span style="font-size: 0.6875rem; color: var(--green-primary); font-weight: 700; text-transform: uppercase;">Chełm i okolice</span>
+        </div>
+      </div>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Zamknij menu">✕</button>
+    </div>
+
+    <ul class="mobile-drawer-links">
+      <li><a href="#uslugi" class="mobile-drawer-link"><span>🌿 Usługi</span> <span>→</span></a></li>
+      <li><a href="#o-nas" class="mobile-drawer-link"><span>⭐ O nas</span> <span>→</span></a></li>
+      <li><a href="#realizacje" class="mobile-drawer-link"><span>📸 Realizacje</span> <span>→</span></a></li>
+      <li><a href="#dlaczego-my" class="mobile-drawer-link"><span>🏆 Dlaczego my</span> <span>→</span></a></li>
+      <li><a href="#kontakt" class="mobile-drawer-link"><span>📞 Kontakt</span> <span>→</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <a href="tel:885885177" class="btn btn-primary" id="mobileDrawerCall">
+        <span>📞</span> Zadzwoń: 885 885 177
+      </a>
+      <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark" id="mobileDrawerWa">
+        <span>💬</span> Napisz na WhatsApp
+      </a>
+      <div style="text-align: center; margin-top: 10px; font-size: 0.8125rem; color: var(--text-muted);">
+        „Działamy z pasją.”
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="pill-badge pill-badge-dark fade-in-up">
+        <span class="dot"></span>
+        <span>Chełm i okolice</span>
+      </div>
+
+      <h1 class="hero-title fade-in-up">
+        <span class="title-prefix">Kompleksowy Serwis Porządkowy</span>
+        <span class="title-highlight">Obiektów i Terenów Zielonych</span>
+      </h1>
+
+      <p class="hero-description fade-in-up">
+        Zajmujemy się kompleksową pielęgnacją ogrodów i terenów zielonych oraz całorocznym serwisem porządkowym obiektów. Oferujemy utrzymanie czystości, odśnieżanie oraz mycie dachów, elewacji i kostki brukowej przy użyciu myjki ciśnieniowej.
+      </p>
+
+      <div class="hero-pillars-bar fade-in-up">
+        <div class="hero-pillar-item">Cały rok</div>
+        <div class="hero-pillar-divider"></div>
+        <div class="hero-pillar-item">Zieleń i porządek</div>
+        <div class="hero-pillar-divider"></div>
+        <div class="hero-pillar-item">Odśnieżanie</div>
+        <div class="hero-pillar-divider"></div>
+        <div class="hero-pillar-item">Mycie ciśnieniowe</div>
+      </div>
+
+      <div class="hero-cta-group fade-in-up">
+        <a href="tel:885885177" class="btn btn-primary" id="heroCallBtn">
+          <span>📞</span> Zadzwoń: 885 885 177
+        </a>
+        <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white" id="heroWaBtn">
+          <span>💬</span> WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <a href="#uslugi" class="scroll-indicator fade-in-up" id="scrollDownBtn" aria-label="Przewiń do sekcji usług">
+          <div class="scroll-indicator-icon"></div>
+          <span>Przewiń w dół</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER (WĄSKI PASEK PRZEWIJANY) -->
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-content">
+        <span class="ticker-item">🌿 Pielęgnacja terenów zielonych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">✂️ Przycinanie krzewów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🚜 Koszenie trawy</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🧹 Sprzątanie obiektów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏢 Utrzymanie porządku wokół budynków</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">❄️ Odśnieżanie</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">💦 Mycie kostki i powierzchni zewnętrznych</span>
+        <span class="ticker-bullet">•</span>
+      </div>
+      <div class="ticker-content">
+        <span class="ticker-item">🌿 Pielęgnacja terenów zielonych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">✂️ Przycinanie krzewów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🚜 Koszenie trawy</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🧹 Sprzątanie obiektów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏢 Utrzymanie porządku wokół budynków</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">❄️ Odśnieżanie</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">💦 Mycie kostki i powierzchni zewnętrznych</span>
+        <span class="ticker-bullet">•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- USŁUGI (SIEDEM KART + KARTA KOMPLEKSOWEJ OBSŁUGI B2B) -->
+  <section class="services-section content-lazy-render" id="uslugi">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-eyebrow">Zakres usług</span>
+        <h2 class="section-title">Wszystko, czego potrzebuje Twój obiekt</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Zapewniamy pełne wsparcie techniczno-porządkowe dla firm, wspólnot mieszkaniowych, zarządców nieruchomości oraz posesji prywatnych.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Karta 1 -->
+        <article class="service-card fade-in-up" id="serviceCard1">
+          <div class="service-header">
+            <div class="service-icon-wrap">🌿</div>
+            <span class="service-number">01</span>
+          </div>
+          <h3 class="service-title">Pielęgnacja terenów zielonych</h3>
+          <p class="service-description">Regularna opieka nad zielenią przez cały sezon. Troszczymy się o zdrowy wzrost roślin, aerację, nawożenie i estetykę otoczenia.</p>
+        </article>
+
+        <!-- Karta 2 -->
+        <article class="service-card fade-in-up" id="serviceCard2">
+          <div class="service-header">
+            <div class="service-icon-wrap">✂️</div>
+            <span class="service-number">02</span>
+          </div>
+          <h3 class="service-title">Przycinanie krzewów</h3>
+          <p class="service-description">Formowanie i pielęgnacja krzewów oraz żywopłotów. Dbamy o właściwe zagęszczenie, estetyczny profil geometryczny i usuwanie suchych gałęzi.</p>
+        </article>
+
+        <!-- Karta 3 -->
+        <article class="service-card fade-in-up" id="serviceCard3">
+          <div class="service-header">
+            <div class="service-icon-wrap">🚜</div>
+            <span class="service-number">03</span>
+          </div>
+          <h3 class="service-title">Koszenie trawy</h3>
+          <p class="service-description">Systematyczne koszenie trawników dowolnej wielkości. Obsługujemy zarówno tereny przydomowe, jak i duże działki inwestycyjne czy osiedla.</p>
+        </article>
+
+        <!-- Karta 4 -->
+        <article class="service-card fade-in-up" id="serviceCard4">
+          <div class="service-header">
+            <div class="service-icon-wrap">🧹</div>
+            <span class="service-number">04</span>
+          </div>
+          <h3 class="service-title">Sprzątanie obiektów</h3>
+          <p class="service-description">Utrzymanie czystości na terenie posesji i wokół budynków. Zapewniamy regularny porządek, zamiatanie ciągów pieszych i usuwanie zanieczyszczeń.</p>
+        </article>
+
+        <!-- Karta 5 -->
+        <article class="service-card fade-in-up" id="serviceCard5">
+          <div class="service-header">
+            <div class="service-icon-wrap">🏢</div>
+            <span class="service-number">05</span>
+          </div>
+          <h3 class="service-title">Utrzymanie porządku wokół budynków</h3>
+          <p class="service-description">Kompleksowa dbałość o otoczenie obiektu. Nadzór nad czystością parkingów, placów manewrowych, stref wejściowych i śmietnikowych.</p>
+        </article>
+
+        <!-- Karta 6 -->
+        <article class="service-card fade-in-up" id="serviceCard6">
+          <div class="service-header">
+            <div class="service-icon-wrap">❄️</div>
+            <span class="service-number">06</span>
+          </div>
+          <h3 class="service-title">Odśnieżanie</h3>
+          <p class="service-description">Zimowe utrzymanie dróg dojazdowych, chodników i parkingów. Szybka reakcja w przypadku opadów, zwalczanie śliskości i bezpieczeństwo ruchu.</p>
+        </article>
+
+        <!-- Karta 7 -->
+        <article class="service-card fade-in-up" id="serviceCard7">
+          <div class="service-header">
+            <div class="service-icon-wrap">💦</div>
+            <span class="service-number">07</span>
+          </div>
+          <h3 class="service-title">Mycie kostki i powierzchni</h3>
+          <p class="service-description">Czyszczenie dachów, elewacji i kostki brukowej myjką ciśnieniową. Skuteczne usuwanie mchów, porostów, plam olejowych i zabrudzeń atmosferycznych.</p>
+        </article>
+
+        <!-- Karta 8 (Dla idealnej symetrii siatki: Stała obsługa B2B) -->
+        <article class="service-card service-card-corporate fade-in-up" id="serviceCard8">
+          <div>
+            <div class="service-header">
+              <div class="service-icon-wrap">🤝</div>
+              <span class="service-number">B2B</span>
+            </div>
+            <h3 class="service-title">Całoroczna obsługa stała</h3>
+            <p class="service-description">Jeden rzetelny wykonawca dla całej posesji. Indywidualny harmonogram prac sezonowych, stała opieka i gwarancja terminowości.</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <a href="tel:885885177" class="btn btn-primary" style="width: 100%; font-size: 0.875rem; padding: 10px 16px;">
+              Zamów wycenę obiektu
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- O NAS / STANDARD PRACY -->
+  <section class="about-section content-lazy-render" id="o-nas">
+    <div class="container about-container">
+      <span class="section-eyebrow" style="color: var(--green-light);">O nas</span>
+      
+      <div class="about-pillars fade-in-up">
+        <div class="about-pillar-tag">Rzetelność</div>
+        <div class="about-pillar-tag">Terminowość</div>
+        <div class="about-pillar-tag">Dokładność</div>
+      </div>
+
+      <p class="about-text fade-in-up">
+        Dbamy o estetykę, porządek i profesjonalny wygląd Twojego otoczenia. Rzetelność, terminowość i dokładność to standard naszej pracy.
+      </p>
+
+      <div class="fade-in-up">
+        <div class="about-quote">
+          „Działamy <span>z pasją.</span>”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REALIZACJE (GALERIA MASONRY Z SZYBKIM ŁADOWANIEM ZDJĘĆ) -->
+  <section class="portfolio-section content-lazy-render" id="realizacje">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-eyebrow">Realizacje</span>
+        <h2 class="section-title">Zobacz nasze realizacje</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Autentyczne efekty naszej pracy na terenie Chełma i okolic. Czystość, precyzja i zadbane posesje.
+        </p>
+      </div>
+
+      <div class="masonry-gallery">
+        <!-- Zdjęcie 01 -->
+        <div class="gallery-item fade-in-up" id="galleryItem1">
+          <img src="https://i.ibb.co/j9tZKMS8/737529058-1316018000513630-8127072910573504919-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>🌿</span> Pielęgnacja terenu i nawierzchni</div>
+          </div>
+        </div>
+
+        <!-- Zdjęcie 02 -->
+        <div class="gallery-item fade-in-up" id="galleryItem2">
+          <img src="https://i.ibb.co/TqKmZyZp/737819533-1692356028709570-4793423515915440077-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>✂️</span> Przycinanie i formowanie zieleni</div>
+          </div>
+        </div>
+
+        <!-- Zdjęcie 03 -->
+        <div class="gallery-item fade-in-up" id="galleryItem3">
+          <img src="https://i.ibb.co/4R7fXn0X/735994092-1805680946852456-6659380256507201468-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>🚜</span> Koszenie i czyszczenie posesji</div>
+          </div>
+        </div>
+
+        <!-- Zdjęcie 04 -->
+        <div class="gallery-item fade-in-up" id="galleryItem4">
+          <img src="https://i.ibb.co/6R1frCqz/738667926-1705395800499189-4881014195683545867-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>💦</span> Mycie ciśnieniowe nawierzchni</div>
+          </div>
+        </div>
+
+        <!-- Zdjęcie 05 -->
+        <div class="gallery-item fade-in-up" id="galleryItem5">
+          <img src="https://i.ibb.co/Dfby5xMP/685017186-122170693724823924-6459919794003434666-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>🏢</span> Porządkowanie otoczenia obiektu</div>
+          </div>
+        </div>
+
+        <!-- Zdjęcie 06 -->
+        <div class="gallery-item fade-in-up" id="galleryItem6">
+          <img src="https://i.ibb.co/jPkF2Hjk/685722711-122170693784823924-7567637844488004333-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>🧹</span> Czystość i estetyka otoczenia</div>
+          </div>
+        </div>
+
+        <!-- Zdjęcie 07 -->
+        <div class="gallery-item fade-in-up" id="galleryItem7">
+          <img src="https://i.ibb.co/YTqF4zMR/684602046-122170693856823924-4163275556147235657-n.jpg" alt="Realizacja — Kompleksowy Serwis Porządkowy" loading="lazy" decoding="async" class="gallery-img" width="600" height="450" />
+          <div class="gallery-overlay">
+            <div class="gallery-caption"><span>❄️</span> Gotowość serwisowa posesji</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-footer-cta fade-in-up">
+        <a href="https://www.facebook.com/profile.php?id=61574717724361" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark" id="fbPortfolioBtn">
+          <span>🌐</span> Więcej realizacji na Facebooku
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DLACZEGO WARTO NAM ZAUFAĆ (CZTERY FILARY) -->
+  <section class="why-us-section content-lazy-render" id="dlaczego-my">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-eyebrow">Zalety współpracy</span>
+        <h2 class="section-title">Dlaczego warto nam zaufać</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Stawiamy na partnerskie relacje, stabilne warunki i rzetelne wykonanie każdego zlecenia.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card fade-in-up" id="pillar1">
+          <div class="pillar-icon-badge">📅</div>
+          <h3 class="pillar-title">Cały rok</h3>
+          <p class="pillar-text">Latem zieleń i porządek, zimą sprawne odśnieżanie. Twój obiekt ma zapewnioną stałą opiekę bez względu na porę roku.</p>
+        </div>
+
+        <div class="pillar-card fade-in-up" id="pillar2">
+          <div class="pillar-icon-badge">🎯</div>
+          <h3 class="pillar-title">Jeden wykonawca</h3>
+          <p class="pillar-text">Kompleksowa obsługa bez konieczności szukania kilku firm. Oszczędzasz czas na koordynacji, rozliczeniach i nadzorze prac.</p>
+        </div>
+
+        <div class="pillar-card fade-in-up" id="pillar3">
+          <div class="pillar-icon-badge">⚙️</div>
+          <h3 class="pillar-title">Profesjonalny sprzęt</h3>
+          <p class="pillar-text">Mycie ciśnieniowe dachów, elewacji i kostki na najwyższym poziomie, wydajne kosiarki oraz niezawodny sprzęt zimowy.</p>
+        </div>
+
+        <div class="pillar-card fade-in-up" id="pillar4">
+          <div class="pillar-icon-badge">💚</div>
+          <h3 class="pillar-title">Zaangażowanie</h3>
+          <p class="pillar-text">Działamy z pasją i dbałością o każdy detal. Każde powierzone zadanie traktujemy z najwyższą starannością i odpowiedzialnością.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASEK CTA -->
+  <section class="cta-strip-section content-lazy-render">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div class="cta-content fade-in-up">
+          <h2 class="cta-title">Potrzebujesz stałej obsługi obiektu?</h2>
+          <p class="cta-subtitle">Skontaktuj się z nami — bezpłatnie ocenimy zapotrzebowanie Twojej nieruchomości i przygotujemy przejrzystą ofertę.</p>
+        </div>
+        <div class="cta-actions fade-in-up">
+          <a href="tel:885885177" class="btn btn-white" id="ctaCallBtn">
+            <span>📞</span> Zadzwoń: 885 885 177
+          </a>
+          <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white" id="ctaWaBtn">
+            <span>💬</span> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="contact-section content-lazy-render" id="kontakt">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-eyebrow">Kontakt</span>
+        <h2 class="section-title">Skontaktuj się z nami</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Jesteśmy do Twojej dyspozycji telefonicznie, przez WhatsApp oraz wiadomość na profilu Facebook.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Lewa kolumna: Dane kontaktowe -->
+        <div class="contact-info-panel fade-in-up" id="contactPanelLeft">
+          <div>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <div class="contact-icon-box">📞</div>
+                <div>
+                  <div class="contact-meta-label">Telefon kontaktowy</div>
+                  <div class="contact-meta-val">
+                    <a href="tel:885885177">885 885 177</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="contact-item">
+                <div class="contact-icon-box">💬</div>
+                <div>
+                  <div class="contact-meta-label">WhatsApp</div>
+                  <div class="contact-meta-val">
+                    <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer">+48 885 885 177</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="contact-item">
+                <div class="contact-icon-box">📍</div>
+                <div>
+                  <div class="contact-meta-label">Obszar działania</div>
+                  <div class="contact-meta-val">Chełm i okolice</div>
+                </div>
+              </li>
+
+              <li class="contact-item">
+                <div class="contact-icon-box">🌐</div>
+                <div>
+                  <div class="contact-meta-label">Profil Facebook</div>
+                  <div class="contact-meta-val">
+                    <a href="https://www.facebook.com/profile.php?id=61574717724361" target="_blank" rel="noopener noreferrer">facebook.com/serwisporzadkowy</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-buttons">
+            <a href="tel:885885177" class="btn btn-primary" id="contactCallBtn">
+              <span>📞</span> Zadzwoń
+            </a>
+            <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark" id="contactWaBtn">
+              <span>💬</span> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Prawa kolumna: Karta z hasłem i ofertą B2B -->
+        <div class="b2b-trust-card fade-in-up" id="contactPanelRight">
+          <div>
+            <div class="b2b-card-badge">
+              <span>★</span> Stała umowa lub jednorazowe zlecenia
+            </div>
+            <h3 class="b2b-card-title">Porządek, na którym możesz polegać każdego dnia</h3>
+            <p class="b2b-card-text">
+              Zapewniamy elastyczne modele współpracy dopasowane do specyfiki obiektu. Oferujemy zarówno regularną obsługę abonamentową dla firm i wspólnot, jak i szybkie realizacje interwencyjne lub sezonowe.
+            </p>
+
+            <div class="b2b-perks">
+              <div class="b2b-perk-item">
+                <span class="b2b-perk-check">✓</span> Stały harmonogram pielęgnacji i koszenia
+              </div>
+              <div class="b2b-perk-item">
+                <span class="b2b-perk-check">✓</span> Gotowość do odśnieżania w sezonie zimowym
+              </div>
+              <div class="b2b-perk-item">
+                <span class="b2b-perk-check">✓</span> Sprzęt ciśnieniowy do kostki, dachów i elewacji
+              </div>
+              <div class="b2b-perk-item">
+                <span class="b2b-perk-check">✓</span> Przejrzyste warunki i bezpośredni kontakt
+              </div>
+            </div>
+          </div>
+
+          <div class="b2b-quote-footer">
+            „Działamy z pasją.”
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOPKA -->
+  <footer class="site-footer content-lazy-render">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Kolumna 1: Brand & opis -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="https://i.ibb.co/v6z786xL/700109807-122172289328823924-1319462465002112149-n.jpg" alt="Logo Kompleksowy Serwis Porządkowy" class="footer-brand-logo" width="44" height="44" loading="lazy" decoding="async" />
+            <div>
+              <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.05rem;">
+                Kompleksowy Serwis Porządkowy
+              </div>
+              <div style="font-size: 0.75rem; color: var(--green-light); font-weight: 600; text-transform: uppercase;">
+                Chełm i okolice
+              </div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Zajmujemy się kompleksową pielęgnacją ogrodów i terenów zielonych oraz całorocznym serwisem porządkowym obiektów w Chełmie i okolicach.
+          </p>
+        </div>
+
+        <!-- Kolumna 2: Skrócona lista usług -->
+        <div>
+          <div class="footer-col-title">Zakres usług</div>
+          <ul class="footer-services-grid">
+            <li><a href="#uslugi" class="footer-service-link">🌿 Tereny zielone</a></li>
+            <li><a href="#uslugi" class="footer-service-link">✂️ Przycinanie krzewów</a></li>
+            <li><a href="#uslugi" class="footer-service-link">🚜 Koszenie trawy</a></li>
+            <li><a href="#uslugi" class="footer-service-link">🧹 Sprzątanie obiektów</a></li>
+            <li><a href="#uslugi" class="footer-service-link">🏢 Porządek wokół budynków</a></li>
+            <li><a href="#uslugi" class="footer-service-link">❄️ Odśnieżanie</a></li>
+            <li><a href="#uslugi" class="footer-service-link">💦 Mycie kostki i elewacji</a></li>
+            <li><a href="#kontakt" class="footer-service-link">🤝 Umowy stałe B2B</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolumna 3: Dane kontaktowe -->
+        <div>
+          <div class="footer-col-title">Kontakt bezpośredni</div>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:885885177" class="footer-contact-link footer-contact-phone">
+                <span>📞</span> 885 885 177
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/48885885177" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                <span>💬</span> WhatsApp: +48 885 885 177
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61574717724361" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                <span>🌐</span> Facebook: Profil firmy
+              </a>
+            </li>
+            <li style="font-size: 0.875rem; color: #8B9389; margin-top: 6px;">
+              <span>📍</span> Obszar: Chełm i sąsiednie gminy
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dolny pasek stopki -->
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> Kompleksowy Serwis Porządkowy. Wszelkie prawa zastrzeżone.
+        </div>
+        <div class="footer-bottom-slogan">
+          „Działamy z pasją.”
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ZOPTYMALIZOWANY JAVASCRIPT: 60FPS, BRAK PRZYCIĘĆ I ZACINANIA -->
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. Dynamiczny rok
+      var yearEl = document.getElementById('currentYear');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // 2. Nawigacja - obsługa scrolla przez requestAnimationFrame (zero lagów)
+      var header = document.getElementById('mainHeader');
+      var isScrolled = false;
+      var scrollTicking = false;
+
+      function updateNavOnScroll() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > 60 && !isScrolled) {
+          header.classList.add('scrolled');
+          isScrolled = true;
+        } else if (currentScroll <= 60 && isScrolled) {
+          header.classList.remove('scrolled');
+          isScrolled = false;
+        }
+        scrollTicking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(updateNavOnScroll);
+          scrollTicking = true;
+        }
+      }, { passive: true });
+
+      // Sprawdzenie stanu początkowego
+      updateNavOnScroll();
+
+      // 3. Obsługa dedykowanego przycisku mobilnego menu i szuflady (drawer)
+      var menuBtn = document.getElementById('mobileMenuBtn');
+      var menuBtnText = document.getElementById('menuBtnText');
+      var drawer = document.getElementById('mobileDrawer');
+      var backdrop = document.getElementById('drawerBackdrop');
+      var drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+      function openMobileMenu() {
+        if (!drawer || !backdrop || !menuBtn) return;
+        menuBtn.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        if (menuBtnText) menuBtnText.textContent = 'Zamknij';
+        drawer.classList.add('active');
+        backdrop.classList.add('active');
+        document.body.classList.add('drawer-open');
+      }
+
+      function closeMobileMenu() {
+        if (!drawer || !backdrop || !menuBtn) return;
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        if (menuBtnText) menuBtnText.textContent = 'Menu';
+        drawer.classList.remove('active');
+        backdrop.classList.remove('active');
+        document.body.classList.remove('drawer-open');
+      }
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var isOpen = drawer.classList.contains('active');
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', function (e) {
+          e.preventDefault();
+          closeMobileMenu();
+        });
+      }
+
+      if (drawerCloseBtn) {
+        drawerCloseBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          closeMobileMenu();
+        });
+      }
+
+      // Zamykanie po kliknięciu w dowolny link z menu i płynne przewinięcie do sekcji
+      var drawerLinks = document.querySelectorAll('.mobile-drawer-link, .mobile-drawer-actions a');
+      drawerLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var targetHref = link.getAttribute('href');
+          closeMobileMenu();
+          if (targetHref && targetHref.startsWith('#')) {
+            e.preventDefault();
+            var targetEl = document.querySelector(targetHref);
+            if (targetEl) {
+              setTimeout(function () {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+              }, 120);
+            }
+          }
+        });
+      });
+
+      // Zamykanie klawiszem Escape
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+
+      // 4. Płynne wejście sekcji przez IntersectionObserver
+      if ('IntersectionObserver' in window) {
+        var fadeElements = document.querySelectorAll('.fade-in-up');
+        var appearObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -20px 0px'
+        });
+
+        fadeElements.forEach(function (el) {
+          appearObserver.observe(el);
+        });
+      } else {
+        var fallbackEls = document.querySelectorAll('.fade-in-up');
+        fallbackEls.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Kompleksowy Serwis Porządkowy",
+  "description": "Całoroczny serwis porządkowy obiektów i pielęgnacja terenów zielonych w Chełmie i okolicach. Pielęgnacja zieleni, koszenie, odśnieżanie, mycie ciśnieniowe.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
