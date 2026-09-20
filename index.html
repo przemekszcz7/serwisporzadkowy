@@ -1224,6 +1224,249 @@
       color: var(--green-light);
     }
 
+    /* Sekcja materiałów graficznych i plakatów w oryginalnych proporcjach */
+    .promo-materials-section {
+      margin-top: 64px;
+      padding-top: 52px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .promo-materials-header {
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+
+    .promo-materials-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--green-light);
+      background: rgba(47, 143, 78, 0.22);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(79, 181, 110, 0.35);
+      margin-bottom: 14px;
+    }
+
+    .promo-materials-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .promo-materials-subtitle {
+      font-size: 1rem;
+      color: #CCD4CC;
+      line-height: 1.6;
+    }
+
+    .promo-materials-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .promo-card {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .promo-card:hover {
+      border-color: rgba(79, 181, 110, 0.5);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .promo-img-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #080C08;
+      cursor: pointer;
+    }
+
+    .promo-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: transform var(--transition-normal);
+    }
+
+    .promo-img-wrapper:hover .promo-img {
+      transform: scale(1.015);
+    }
+
+    .promo-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(12, 18, 13, 0.45);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity var(--transition-fast);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    .promo-img-wrapper:hover .promo-overlay {
+      opacity: 1;
+    }
+
+    .promo-zoom-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(18, 30, 20, 0.92);
+      color: var(--green-light);
+      border: 1px solid var(--green-light);
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(4px);
+      transition: transform var(--transition-fast);
+    }
+
+    .promo-img-wrapper:hover .promo-zoom-badge {
+      transform: translateY(0);
+    }
+
+    .promo-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+      padding: 4px 6px 0;
+      text-align: left;
+    }
+
+    .promo-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--green-light);
+      background: rgba(47, 143, 78, 0.22);
+      border: 1px solid rgba(79, 181, 110, 0.3);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .promo-caption {
+      font-size: 0.875rem;
+      color: #A3B0A4;
+      line-height: 1.4;
+    }
+
+    .promo-row-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .promo-row-duo {
+        grid-template-columns: 1fr;
+      }
+      .promo-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+    }
+
+    /* Modal / Lightbox do powiększenia grafik */
+    .promo-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .promo-modal-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .promo-modal-container {
+      position: relative;
+      max-width: 94vw;
+      max-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .promo-modal-img {
+      max-width: 100%;
+      max-height: 84vh;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .promo-modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .promo-modal-close:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(1.05);
+    }
+
+    .promo-modal-caption {
+      color: #E2E8E3;
+      font-size: 0.92rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
     /* Realizacje (Masonry) */
     .portfolio-section {
       padding: 95px 0;
@@ -2134,7 +2377,7 @@
       </h1>
 
       <p class="hero-description fade-in-up">
-        Świadczymy profesjonalne usługi ogrodnicze oraz całoroczny kompleksowy serwis porządkowy obiektów i posesji w Chełmie i okolicach. Oferujemy zakładanie trawników z rolki i z siewu, usługi glebogryzarką, opryski, koszenie, mycie ciśnieniowe, odśnieżanie oraz realizację prac dopasowanych do Twoich indywidualnych zapotrzebowań.
+        Świadczymy profesjonalne usługi ogrodnicze oraz kompleksowy serwis porządkowy posesji i obiektów w Chełmie i okolicach. Oferujemy zakładanie trawników z rolki i z siewu, koszenie, wertykulację, nawożenie, usługi glebogryzarką, przycinanie drzew i krzewów, opryski, mycie kostki brukowej i elewacji, malowanie altanek i płotów, wywóz liści, gałęzi i starych mebli, opróżnianie piwnic i garaży, rozbiórkę oraz prace na indywidualne zapotrzebowanie.
       </p>
 
       <div class="hero-pillars-bar fade-in-up">
@@ -2146,9 +2389,15 @@
         <div class="hero-pillar-divider"></div>
         <div class="hero-pillar-item">🚜 Prace glebogryzarką</div>
         <div class="hero-pillar-divider"></div>
-        <div class="hero-pillar-item">🧪 Opryski ochronne</div>
+        <div class="hero-pillar-item">✂️🌳 Drzewa, krzewy & opryski</div>
         <div class="hero-pillar-divider"></div>
-        <div class="hero-pillar-item">💦 Mycie ciśnieniowe</div>
+        <div class="hero-pillar-item">🚿🏠 Mycie kostki & elewacji</div>
+        <div class="hero-pillar-divider"></div>
+        <div class="hero-pillar-item">🚛 Wywóz odpadów & mebli</div>
+        <div class="hero-pillar-divider"></div>
+        <div class="hero-pillar-item">🎨 Malowanie altan & płotów</div>
+        <div class="hero-pillar-divider"></div>
+        <div class="hero-pillar-item">🏗️ Opróżnianie & rozbiórka</div>
       </div>
 
       <div class="hero-cta-group fade-in-up">
@@ -2163,7 +2412,7 @@
       <div>
         <a href="#uslugi" class="scroll-indicator fade-in-up" id="scrollDownBtn" aria-label="Przewiń do sekcji usług">
           <div class="scroll-indicator-icon"></div>
-          <span>Poznaj nasze usługi</span>
+          <span>Poznaj pełną ofertę usług</span>
         </a>
       </div>
     </div>
@@ -2173,240 +2422,419 @@
   <div class="ticker-bar" aria-hidden="true">
     <div class="ticker-track">
       <div class="ticker-content">
-        <span class="ticker-item">🌿 Usługi ogrodnicze</span>
+        <span class="ticker-item">💦 Mycie kostki brukowej</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🧹 Kompleksowy serwis porządkowy</span>
+        <span class="ticker-item">🚿 Czyszczenie elewacji</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🚜 Usługi glebogryzarką</span>
+        <span class="ticker-item">🏠 Mycie dachów</span>
         <span class="ticker-bullet">•</span>
         <span class="ticker-item">🌱 Zakładanie trawników z rolki i z siewu</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🧪 Opryski</span>
-        <span class="ticker-bullet">•</span>
-        <span class="ticker-item">✂️ Przycinanie krzewów</span>
-        <span class="ticker-bullet">•</span>
         <span class="ticker-item">🚜 Koszenie trawy</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🧹 Sprzątanie posesji</span>
+        <span class="ticker-item">🌱 Wertykulacja i aeracja trawników</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">💦 Mycie kostki i elewacji</span>
+        <span class="ticker-item">🌱 Nawożenie trawników</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">❄️ Odśnieżanie</span>
+        <span class="ticker-item">🚜 Glebogryzarka (przygotowanie terenu)</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">✨ Indywidualne zapotrzebowania</span>
+        <span class="ticker-item">✂️ Przycinanie tuj i żywopłotów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌳 Przycinanie drzew i krzewów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🧪 Opryski ochronne</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌿 Sadzenie drzewa i krzewów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🛠️ Przekopywanie ogródka</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌞 Przygotowanie ogrodu na nowy sezon</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏡 Porządkowanie działek i ogrodów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌿 Pielęgnacja terenów zielonych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🧹 Sprzątanie podwórka i ogródków działkowych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏢 Utrzymanie porządku wokół budynków</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🍂 Wywóz liści i gałęzi</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🚛 Wywóz starych mebli i gabarytów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🎨 Malowanie altanek i płotów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">📦 Opróżnianie piwnic i garaży</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏗️ Drobne rozbiórki</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">❄️ Odśnieżanie posesji</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🤝 Kompleksowy serwis obiektów i terenów zielonych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">✨ I inne prace ogrodowe — proszę pytać o zapotrzebowania</span>
         <span class="ticker-bullet">•</span>
       </div>
       <div class="ticker-content">
-        <span class="ticker-item">🌿 Usługi ogrodnicze</span>
+        <span class="ticker-item">💦 Mycie kostki brukowej</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🧹 Kompleksowy serwis porządkowy</span>
+        <span class="ticker-item">🚿 Czyszczenie elewacji</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🚜 Usługi glebogryzarką</span>
+        <span class="ticker-item">🏠 Mycie dachów</span>
         <span class="ticker-bullet">•</span>
         <span class="ticker-item">🌱 Zakładanie trawników z rolki i z siewu</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🧪 Opryski</span>
-        <span class="ticker-bullet">•</span>
-        <span class="ticker-item">✂️ Przycinanie krzewów</span>
-        <span class="ticker-bullet">•</span>
         <span class="ticker-item">🚜 Koszenie trawy</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">🧹 Sprzątanie posesji</span>
+        <span class="ticker-item">🌱 Wertykulacja i aeracja trawników</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">💦 Mycie kostki i elewacji</span>
+        <span class="ticker-item">🌱 Nawożenie trawników</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">❄️ Odśnieżanie</span>
+        <span class="ticker-item">🚜 Glebogryzarka (przygotowanie terenu)</span>
         <span class="ticker-bullet">•</span>
-        <span class="ticker-item">✨ Indywidualne zapotrzebowania</span>
+        <span class="ticker-item">✂️ Przycinanie tuj i żywopłotów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌳 Przycinanie drzew i krzewów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🧪 Opryski ochronne</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌿 Sadzenie drzewa i krzewów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🛠️ Przekopywanie ogródka</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌞 Przygotowanie ogrodu na nowy sezon</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏡 Porządkowanie działek i ogrodów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🌿 Pielęgnacja terenów zielonych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🧹 Sprzątanie podwórka i ogródków działkowych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏢 Utrzymanie porządku wokół budynków</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🍂 Wywóz liści i gałęzi</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🚛 Wywóz starych mebli i gabarytów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🎨 Malowanie altanek i płotów</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">📦 Opróżnianie piwnic i garaży</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🏗️ Drobne rozbiórki</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">❄️ Odśnieżanie posesji</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">🤝 Kompleksowy serwis obiektów i terenów zielonych</span>
+        <span class="ticker-bullet">•</span>
+        <span class="ticker-item">✨ I inne prace ogrodowe — proszę pytać o zapotrzebowania</span>
         <span class="ticker-bullet">•</span>
       </div>
     </div>
   </div>
 
-  <!-- USŁUGI (OGRODNICTWO, SERWIS PORZĄDKOWY ORAZ PRACE NA ZAPYTANIE) -->
+  <!-- USŁUGI (WYSZCZEGÓLNIONY ZAKRES USŁUG) -->
   <section class="services-section content-lazy-render" id="uslugi">
     <div class="container">
       <div class="section-header fade-in-up">
-        <span class="section-eyebrow">Zakres działalności</span>
-        <h2 class="section-title">Główne Usługi: Ogrodnictwo i Kompleksowy Serwis Porządkowy</h2>
+        <span class="section-eyebrow">Wyszczególniony zakres usług</span>
+        <h2 class="section-title">Usługi Ogrodnicze & Kompleksowy Serwis Porządkowy</h2>
         <p style="color: var(--text-muted); font-size: 1.05rem;">
-          Zapewniamy profesjonalne wsparcie techniczno-pielęgnacyjne: od prac glebogryzarką, trawników i oprysków, po całoroczne utrzymanie czystości budynków, mycie ciśnieniowe oraz zlecenia na indywidualne zapotrzebowanie.
+          Każda usługa wyszczególniona osobno — realizujemy prace z zachowaniem najwyższej staranności, profesjonalnym sprzętem i dbałością o każdy detal.
         </p>
-      </div>
-
-      <!-- DWA GŁÓWNE FILARY SPECJALIZACJI -->
-      <div class="main-services-pillars fade-in-up">
-        <!-- Filar 1: Usługi Ogrodnicze -->
-        <div class="main-service-pillar-card" id="pillarGardening">
-          <div class="pillar-badge">🌿 Główna specjalizacja I</div>
-          <h3 class="main-pillar-title">Usługi Ogrodnicze</h3>
-          <p class="main-pillar-desc">
-            Kompleksowe prace ogrodnicze i ziemne: od mechanicznego przygotowania podłoża glebogryzarką, poprzez montaż trawników z rolki i siewu, profesjonalne opryski ochronne, aż po regularną, całoroczną opiekę nad roślinnością.
-          </p>
-          <div class="main-pillar-tags">
-            <span class="main-pillar-tag">🌱 Trawniki rolka & siew</span>
-            <span class="main-pillar-tag">🚜 Usługi glebogryzarką</span>
-            <span class="main-pillar-tag">🧪 Opryski ochronne</span>
-            <span class="main-pillar-tag">✂️ Formowanie krzewów</span>
-            <span class="main-pillar-tag">🚜 Koszenie trawy</span>
-          </div>
-        </div>
-
-        <!-- Filar 2: Kompleksowy Serwis Porządkowy -->
-        <div class="main-service-pillar-card pillar-accent" id="pillarCleaning">
-          <div class="pillar-badge">🧹 Główna specjalizacja II</div>
-          <h3 class="main-pillar-title">Kompleksowy Serwis Porządkowy</h3>
-          <p class="main-pillar-desc">
-            Całoroczne utrzymanie czystości i estetyki obiektów mieszkalnych, komercyjnych oraz posesji prywatnych. Mycie ciśnieniowe dachów, kostki i elewacji, bieżące sprzątanie posesji oraz zimowe odśnieżanie dróg i parkingów.
-          </p>
-          <div class="main-pillar-tags">
-            <span class="main-pillar-tag">🧹 Sprzątanie obiektów</span>
-            <span class="main-pillar-tag">🏢 Porządek posesji</span>
-            <span class="main-pillar-tag">💦 Mycie ciśnieniowe</span>
-            <span class="main-pillar-tag">❄️ Odśnieżanie</span>
-            <span class="main-pillar-tag">🤝 Umowy stałe B2B</span>
-          </div>
-        </div>
       </div>
 
       <!-- SIATKA SZCZEGÓŁOWYCH USŁUG -->
       <div class="services-grid">
-        <!-- Karta 1: Usługi glebogryzarką -->
-        <article class="service-card fade-in-up" id="serviceCardGlebogryzarka">
+        <!-- 01: Mycie kostki brukowej -->
+        <article class="service-card fade-in-up" id="serviceCardMycieKostki">
           <div class="service-header">
-            <div class="service-icon-wrap">🚜</div>
+            <div class="service-icon-wrap">💦</div>
             <span class="service-number">01</span>
           </div>
-          <span class="service-tag">Usługi ogrodnicze</span>
-          <h3 class="service-title">Usługi glebogryzarką</h3>
-          <p class="service-description">Mechaniczne spulchnianie i rekultywacja podłoża, kruszenie zbitej ziemi, napowietrzanie oraz precyzyjne wyrównywanie i niwelacja terenu pod trawniki, rabaty i nowe nasadzenia.</p>
+          <span class="service-tag">Mycie ciśnieniowe</span>
+          <h3 class="service-title">Mycie kostki brukowej</h3>
+          <p class="service-description">Wysokociśnieniowe mycie podjazdów, chodników i alejek. Skutecznie usuwamy mchy, porosty, chwasty ze szczelin, plamy z oleju silnikowego oraz wieloletnie zanieczyszczenia atmosferyczne.</p>
         </article>
 
-        <!-- Karta 2: Zakładanie trawników z rolki i z siewu -->
-        <article class="service-card fade-in-up" id="serviceCardTrawniki">
+        <!-- 02: Czyszczenie elewacji -->
+        <article class="service-card fade-in-up" id="serviceCardCzyszczenieElewacji">
           <div class="service-header">
-            <div class="service-icon-wrap">🌱</div>
+            <div class="service-icon-wrap">🚿</div>
             <span class="service-number">02</span>
           </div>
-          <span class="service-tag">Usługi ogrodnicze</span>
-          <h3 class="service-title">Zakładanie trawników z rolki i z siewu</h3>
-          <p class="service-description">Montaż trawnika z rolki dający natychmiastowy efekt gęstego, zielonego dywanu lub tradycyjny wysiew wyselekcjonowanych mieszanek traw dopasowanych do warunków glebowych i nasłonecznienia.</p>
+          <span class="service-tag">Mycie ciśnieniowe</span>
+          <h3 class="service-title">Czyszczenie elewacji</h3>
+          <p class="service-description">Dokładne mycie ścian budynków, tynków mineralnych, akrylowych i silikonowych. Usuwamy zielone naloty, algi, pleśnie, zacieki i kurz bez ryzyka naruszenia powłoki tynku.</p>
         </article>
 
-        <!-- Karta 3: Opryski -->
-        <article class="service-card fade-in-up" id="serviceCardOpryski">
+        <!-- 03: Mycie dachów -->
+        <article class="service-card fade-in-up" id="serviceCardMycieDachow">
           <div class="service-header">
-            <div class="service-icon-wrap">🧪</div>
+            <div class="service-icon-wrap">🏠</div>
             <span class="service-number">03</span>
           </div>
-          <span class="service-tag">Usługi ogrodnicze</span>
-          <h3 class="service-title">Opryski</h3>
-          <p class="service-description">Profesjonalne zabiegi ochronne: opryski chwastobójcze (selektywne zwalczanie chwastów w trawniku oraz opryski totalne), grzybobójcze i owadobójcze oraz skuteczne usuwanie mchu i porostów z kostki.</p>
+          <span class="service-tag">Mycie ciśnieniowe</span>
+          <h3 class="service-title">Mycie dachów</h3>
+          <p class="service-description">Czyszczenie dachówki ceramicznej, cementowej oraz blachodachówki. Bezpieczne i skuteczne usuwanie mchów, porostów, sadzy, ptasich odchodów i zanieczyszczeń komunikacyjnych.</p>
         </article>
 
-        <!-- Karta 4: Pielęgnacja terenów zielonych -->
-        <article class="service-card fade-in-up" id="serviceCardZielon">
+        <!-- 04: Zakładanie trawników z rolki i z siewu -->
+        <article class="service-card fade-in-up" id="serviceCardTrawnikiRolkaSiew">
           <div class="service-header">
-            <div class="service-icon-wrap">🌿</div>
+            <div class="service-icon-wrap">🌱</div>
             <span class="service-number">04</span>
           </div>
           <span class="service-tag">Usługi ogrodnicze</span>
-          <h3 class="service-title">Pielęgnacja terenów zielonych</h3>
-          <p class="service-description">Kompleksowa opieka nad ogrodami prywatnymi i zieleńcami firmowymi. Wertykulacja, aeracja, nawożenie dopasowane do pory roku, dosiewki oraz dbałość o zdrowy wzrost i estetykę otoczenia.</p>
+          <h3 class="service-title">Zakładanie trawników z rolki i z siewu</h3>
+          <p class="service-description">Kompleksowe zakładanie nowych trawników: układanie darni z rolki zapewniające błyskawiczny efekt gęstego, zielonego dywanu lub staranny siew z wyselekcjonowanych mieszanek traw.</p>
         </article>
 
-        <!-- Karta 5: Przycinanie krzewów -->
-        <article class="service-card fade-in-up" id="serviceCardKrzewy">
-          <div class="service-header">
-            <div class="service-icon-wrap">✂️</div>
-            <span class="service-number">05</span>
-          </div>
-          <span class="service-tag">Usługi ogrodnicze</span>
-          <h3 class="service-title">Przycinanie krzewów i żywopłotów</h3>
-          <p class="service-description">Formowanie estetyczne, odmładzanie krzewów i żywopłotów, cięcia sanitarne oraz usuwanie suchych gałęzi. Dbamy o właściwe zagęszczenie i harmonijny profil roślinności.</p>
-        </article>
-
-        <!-- Karta 6: Koszenie trawy -->
-        <article class="service-card fade-in-up" id="serviceCardKoszenie">
+        <!-- 05: Koszenie trawy -->
+        <article class="service-card fade-in-up" id="serviceCardKoszenieTrawy">
           <div class="service-header">
             <div class="service-icon-wrap">🚜</div>
+            <span class="service-number">05</span>
+          </div>
+          <span class="service-tag">Pielęgnacja trawnika</span>
+          <h3 class="service-title">Koszenie trawy</h3>
+          <p class="service-description">Regularne oraz jednorazowe koszenie trawników przydomowych, ogrodów, terenów firmowych i osiedli. Wykaszanie wysokiej trawy, zarośli oraz nieużytków kosiarkami i kosami spalinowymi.</p>
+        </article>
+
+        <!-- 06: Wertykulacja i aeracja trawników -->
+        <article class="service-card fade-in-up" id="serviceCardWertykulacja">
+          <div class="service-header">
+            <div class="service-icon-wrap">🌱</div>
             <span class="service-number">06</span>
           </div>
-          <span class="service-tag">Usługi ogrodnicze</span>
-          <h3 class="service-title">Koszenie trawy</h3>
-          <p class="service-description">Systematyczne koszenie trawników przydomowych, terenów firmowych, osiedli mieszkaniowych oraz wykaszanie zarośli i nieużytków o dowolnej powierzchni.</p>
+          <span class="service-tag">Pielęgnacja trawnika</span>
+          <h3 class="service-title">Wertykulacja i aeracja trawników</h3>
+          <p class="service-description">Pionowe nacinanie darni usuwające obumarły filc, mech i resztki roślinne, połączone z aeracją głęboko napowietrzającą system korzeniowy i stymulującą dynamiczny wzrost nowej trawy.</p>
         </article>
 
-        <!-- Karta 7: Sprzątanie obiektów i posesji -->
-        <article class="service-card fade-in-up" id="serviceCardSprzatanie">
+        <!-- 07: Nawożenie trawników -->
+        <article class="service-card fade-in-up" id="serviceCardNawozenie">
           <div class="service-header">
-            <div class="service-icon-wrap">🧹</div>
+            <div class="service-icon-wrap">🌱</div>
             <span class="service-number">07</span>
           </div>
-          <span class="service-tag">Serwis porządkowy</span>
-          <h3 class="service-title">Sprzątanie obiektów i posesji</h3>
-          <p class="service-description">Utrzymanie nienagannego porządku na terenie posesji prywatnych, obiektów biurowych i produkcyjnych. Regularny porządek, zamiatanie ciągów pieszych i usuwanie zanieczyszczeń.</p>
+          <span class="service-tag">Pielęgnacja trawnika</span>
+          <h3 class="service-title">Nawożenie trawników</h3>
+          <p class="service-description">Dobór i precyzyjne rozprowadzanie profesjonalnych nawozów mineralnych: startowych wiosennych, regeneracyjnych, odchwaszczających oraz jesiennych chroniących trawnik przed przymrozkami.</p>
         </article>
 
-        <!-- Karta 8: Utrzymanie porządku wokół budynków -->
-        <article class="service-card fade-in-up" id="serviceCardPorzadek">
+        <!-- 08: Glebogryzarka (przygotowanie terenu) -->
+        <article class="service-card fade-in-up" id="serviceCardGlebogryzarka">
           <div class="service-header">
-            <div class="service-icon-wrap">🏢</div>
+            <div class="service-icon-wrap">🚜</div>
             <span class="service-number">08</span>
           </div>
-          <span class="service-tag">Serwis porządkowy</span>
-          <h3 class="service-title">Utrzymanie porządku wokół budynków</h3>
-          <p class="service-description">Dbałość o otoczenie obiektów: parkingi, place manewrowe, podjazdy, strefy wejściowe oraz altany śmietnikowe dla wspólnot, spółdzielni i firm.</p>
+          <span class="service-tag">Prace ziemne</span>
+          <h3 class="service-title">Glebogryzarka (przygotowanie terenu)</h3>
+          <p class="service-description">Mechaniczne spulchnianie i rekultywacja zbitej ziemi, kruszenie twardych brył, usuwanie starej darni oraz precyzyjne wyrównywanie i niwelacja terenu pod trawniki, rabaty i warzywniki.</p>
         </article>
 
-        <!-- Karta 9: Mycie kostki i powierzchni -->
-        <article class="service-card fade-in-up" id="serviceCardMycie">
+        <!-- 09: Przycinanie tuj i żywopłotów -->
+        <article class="service-card fade-in-up" id="serviceCardPrzycinanieTui">
           <div class="service-header">
-            <div class="service-icon-wrap">💦</div>
+            <div class="service-icon-wrap">✂️</div>
             <span class="service-number">09</span>
           </div>
-          <span class="service-tag">Serwis porządkowy</span>
-          <h3 class="service-title">Mycie kostki i powierzchni</h3>
-          <p class="service-description">Wysokociśnieniowe czyszczenie dachów, elewacji, ogrodzeń i kostki brukowej. Skuteczne usuwanie mchów, porostów, osadów i trudnych zabrudzeń atmosferycznych.</p>
+          <span class="service-tag">Pielęgnacja zieleni</span>
+          <h3 class="service-title">Przycinanie tuj i żywopłotów</h3>
+          <p class="service-description">Formowanie estetycznych ścian zieleni, skracanie szpalerów tuj (np. Smaragd, Brabant), wyrównywanie wysokości, cięcia zagęszczające oraz czyszczenie suchych pędów od środka rośliny.</p>
         </article>
 
-        <!-- Karta 10: Odśnieżanie -->
+        <!-- 10: Przycinanie drzew i krzewów -->
+        <article class="service-card fade-in-up" id="serviceCardPrzycinanieDrzew">
+          <div class="service-header">
+            <div class="service-icon-wrap">🌳</div>
+            <span class="service-number">10</span>
+          </div>
+          <span class="service-tag">Pielęgnacja zieleni</span>
+          <h3 class="service-title">Przycinanie drzew i krzewów</h3>
+          <p class="service-description">Cięcia pielęgnacyjne, formujące i prześwietlające korony drzew owocowych oraz ozdobnych. Usuwanie chorych, połamanych i zagrażających gałęzi oraz odmładzanie starych krzewów.</p>
+        </article>
+
+        <!-- 11: Opryski ochronne -->
+        <article class="service-card fade-in-up" id="serviceCardOpryski">
+          <div class="service-header">
+            <div class="service-icon-wrap">🧪</div>
+            <span class="service-number">11</span>
+          </div>
+          <span class="service-tag">Ochrona roślin</span>
+          <h3 class="service-title">Opryski ochronne</h3>
+          <p class="service-description">Profesjonalne zabiegi fitosanitarne: zwalczanie chwastów dwuliściennych w trawnikach (opryski selektywne), opryski totalne, grzybobójcze, owadobójcze oraz likwidacja mchów i porostów.</p>
+        </article>
+
+        <!-- 12: Sadzenie drzewa i krzewów -->
+        <article class="service-card fade-in-up" id="serviceCardSadzenie">
+          <div class="service-header">
+            <div class="service-icon-wrap">🌿</div>
+            <span class="service-number">12</span>
+          </div>
+          <span class="service-tag">Prace ogrodowe</span>
+          <h3 class="service-title">Sadzenie drzewa i krzewów</h3>
+          <p class="service-description">Sadzenie nowych drzew iglastych i liściastych, tui, krzewów ozdobnych i owocowych oraz bylin. Właściwe zaprawienie dołka żyzną ziemią, stabilne palikowanie, formowanie misy i podlanie.</p>
+        </article>
+
+        <!-- 13: Przekopywanie ogródka -->
+        <article class="service-card fade-in-up" id="serviceCardPrzekopywanie">
+          <div class="service-header">
+            <div class="service-icon-wrap">🛠️</div>
+            <span class="service-number">13</span>
+          </div>
+          <span class="service-tag">Prace ogrodowe</span>
+          <h3 class="service-title">Przekopywanie ogródka</h3>
+          <p class="service-description">Ręczne oraz maszynowe przekopywanie rabat, grządek warzywnych i działek. Mieszanie podłoża z obornikiem, kompostem lub nowym czarnoziemem z przygotowaniem do siewu i sadzenia.</p>
+        </article>
+
+        <!-- 14: Przygotowanie ogrodu na nowy sezon -->
+        <article class="service-card fade-in-up" id="serviceCardNowySezon">
+          <div class="service-header">
+            <div class="service-icon-wrap">🌞</div>
+            <span class="service-number">14</span>
+          </div>
+          <span class="service-tag">Sezonowe prace</span>
+          <h3 class="service-title">Przygotowanie ogrodu na nowy sezon</h3>
+          <p class="service-description">Wiosenne budzenie ogrodu ze snu zimowego oraz kompleksowe jesienne porządki: wygrabianie trawników, cięcia startowe, ściółkowanie korą, zabezpieczanie i okrywanie roślin przed mrozami.</p>
+        </article>
+
+        <!-- 15: Porządkowanie działek i ogrodów -->
+        <article class="service-card fade-in-up" id="serviceCardPorzadkowanieDzialek">
+          <div class="service-header">
+            <div class="service-icon-wrap">🏡</div>
+            <span class="service-number">15</span>
+          </div>
+          <span class="service-tag">Prace porządkowe</span>
+          <h3 class="service-title">Porządkowanie działek i ogrodów</h3>
+          <p class="service-description">Doprowadzanie do porządku zaniedbanych ogrodów i działek rekreacyjnych (ROD): karczowanie zarośli, usuwanie samosiejek, wycinanie gęstych chaszczy i gruntowne uprzątnięcie terenu.</p>
+        </article>
+
+        <!-- 16: Pielęgnacja terenów zielonych -->
+        <article class="service-card fade-in-up" id="serviceCardPielegnacjaTerenow">
+          <div class="service-header">
+            <div class="service-icon-wrap">🌿</div>
+            <span class="service-number">16</span>
+          </div>
+          <span class="service-tag">Usługi ogrodnicze</span>
+          <h3 class="service-title">Pielęgnacja terenów zielonych</h3>
+          <p class="service-description">Stała, kompleksowa opieka nad zieleńcami firmowymi, osiedlowymi oraz ogrodami prywatnymi. Dbałość o zdrowie roślin, regularne zabiegi pielęgnacyjne i nieskazitelną estetykę otoczenia.</p>
+        </article>
+
+        <!-- 17: Sprzątanie podwórka i ogródków działkowych -->
+        <article class="service-card fade-in-up" id="serviceCardSprzataniePodworka">
+          <div class="service-header">
+            <div class="service-icon-wrap">🧹</div>
+            <span class="service-number">17</span>
+          </div>
+          <span class="service-tag">Serwis porządkowy</span>
+          <h3 class="service-title">Sprzątanie podwórka i ogródków działkowych</h3>
+          <p class="service-description">Gruntowne i bieżące sprzątanie placów, podwórek, alejek i terenów rekreacyjnych. Zamiatanie, usuwanie zanieczyszczeń, wygrabianie liści i zaprowadzenie wzorowego ładu na posesji.</p>
+        </article>
+
+        <!-- 18: Utrzymanie porządku wokół budynków -->
+        <article class="service-card fade-in-up" id="serviceCardUtrzymaniePorzadku">
+          <div class="service-header">
+            <div class="service-icon-wrap">🏢</div>
+            <span class="service-number">18</span>
+          </div>
+          <span class="service-tag">Serwis obiektów</span>
+          <h3 class="service-title">Utrzymanie porządku wokół budynków</h3>
+          <p class="service-description">Całoroczna dbałość o czystość stref wejściowych, parkingów, podjazdów, wiat śmietnikowych i ciągów komunikacyjnych dla wspólnot mieszkaniowych, spółdzielni oraz obiektów komercyjnych.</p>
+        </article>
+
+        <!-- 19: Wywóz liści, gałęzi i odpadów zielonych -->
+        <article class="service-card fade-in-up" id="serviceCardWywozLiscie">
+          <div class="service-header">
+            <div class="service-icon-wrap">🍂</div>
+            <span class="service-number">19</span>
+          </div>
+          <span class="service-tag">Wywóz i utylizacja</span>
+          <h3 class="service-title">Wywóz liści, gałęzi i odpadów zielonych</h3>
+          <p class="service-description">Sprawny załadunek i legalny transport do utylizacji odpadów bio: skoszonej trawy, zgrabionych liści, ściętych gałęzi, zrębków, wykarczowanych krzaków i karp po pracach ogrodniczych.</p>
+        </article>
+
+        <!-- 20: Wywóz starych mebli i gabarytów -->
+        <article class="service-card fade-in-up" id="serviceCardWywozMebli">
+          <div class="service-header">
+            <div class="service-icon-wrap">🚛</div>
+            <span class="service-number">20</span>
+          </div>
+          <span class="service-tag">Transport i wywóz</span>
+          <h3 class="service-title">Wywóz starych mebli i gabarytów</h3>
+          <p class="service-description">Wynoszenie z mieszkań, piwnic czy garaży, załadunek na samochód i legalny wywóz starych mebli, kanap, szaf, zużytego sprzętu AGD/RTV oraz innych odpadów wielkogabarytowych.</p>
+        </article>
+
+        <!-- 21: Malowanie altanek i płotów -->
+        <article class="service-card fade-in-up" id="serviceCardMalowanie">
+          <div class="service-header">
+            <div class="service-icon-wrap">🎨</div>
+            <span class="service-number">21</span>
+          </div>
+          <span class="service-tag">Konserwacja i renowacja</span>
+          <h3 class="service-title">Malowanie altanek i płotów</h3>
+          <p class="service-description">Renowacja i ochrona drewna oraz metalu: czyszczenie, szlifowanie, zabezpieczenie impregnatem oraz malowanie altan, płotów drewnianych i betonowych, pergoli, drewutni i mebli ogrodowych.</p>
+        </article>
+
+        <!-- 22: Opróżnianie piwnic i garaży -->
+        <article class="service-card fade-in-up" id="serviceCardOproznianie">
+          <div class="service-header">
+            <div class="service-icon-wrap">📦</div>
+            <span class="service-number">22</span>
+          </div>
+          <span class="service-tag">Serwis porządkowy</span>
+          <h3 class="service-title">Opróżnianie piwnic i garaży</h3>
+          <p class="service-description">Całkowite opróżnianie, czyszczenie i porządkowanie zagraconych piwnic, garaży, strychów, komórek lokatorskich oraz budynków gospodarczych z segregacją i wywozem niepotrzebnych rzeczy.</p>
+        </article>
+
+        <!-- 23: Drobne rozbiórki -->
+        <article class="service-card fade-in-up" id="serviceCardRozbiorka">
+          <div class="service-header">
+            <div class="service-icon-wrap">🏗️</div>
+            <span class="service-number">23</span>
+          </div>
+          <span class="service-tag">Prace rozbiórkowe</span>
+          <h3 class="service-title">Drobne rozbiórki</h3>
+          <p class="service-description">Bezpieczny demontaż i rozbiórka starych szop, altanek działkowych, wiat, drewutni, zniszczonych płotów i konstrukcji drewniano-metalowych wraz z uporządkowaniem terenu i wywozem gruzu.</p>
+        </article>
+
+        <!-- 24: Odśnieżanie posesji i obiektów -->
         <article class="service-card fade-in-up" id="serviceCardSnieg">
           <div class="service-header">
             <div class="service-icon-wrap">❄️</div>
-            <span class="service-number">10</span>
+            <span class="service-number">24</span>
           </div>
-          <span class="service-tag">Serwis porządkowy</span>
-          <h3 class="service-title">Odśnieżanie i utrzymanie zimowe</h3>
-          <p class="service-description">Zimowe utrzymanie dróg dojazdowych, parkingów i chodników. Sprawna reakcja przy opadach, odśnieżanie mechaniczne oraz zwalczanie gołoledzi i śliskości.</p>
+          <span class="service-tag">Obsługa zimowa</span>
+          <h3 class="service-title">Odśnieżanie posesji i obiektów</h3>
+          <p class="service-description">Zimowe utrzymanie posesji prywatnych, osiedli i firm: mechaniczne i ręczne odśnieżanie chodników, podjazdów, schodów, parkingów oraz skuteczne zwalczanie gołoledzi solą i piaskiem.</p>
         </article>
 
-        <!-- Karta 11: Stała obsługa B2B -->
-        <article class="service-card service-card-corporate fade-in-up" id="serviceCardB2B">
+        <!-- 25: Kompleksowy serwis porządkowy obiektów i terenów zielonych (stała obsługa) -->
+        <article class="service-card service-card-corporate fade-in-up" id="serviceCardStalaObsluga">
           <div>
             <div class="service-header">
               <div class="service-icon-wrap">🤝</div>
-              <span class="service-number">B2B</span>
+              <span class="service-number">25</span>
             </div>
-            <span class="service-tag" style="background: rgba(79, 181, 110, 0.2); color: var(--green-light);">Umowa abonamentowa</span>
-            <h3 class="service-title">Całoroczna obsługa stała</h3>
-            <p class="service-description">Jeden rzetelny wykonawca dla całej posesji. Ustalony harmonogram prac ogrodniczych i porządkowych, stała opieka i gwarancja terminowości.</p>
+            <span class="service-tag" style="background: rgba(79, 181, 110, 0.2); color: var(--green-light);">Umowa stała & abonament</span>
+            <h3 class="service-title">Kompleksowy serwis porządkowy obiektów i terenów zielonych</h3>
+            <p class="service-description">Stała, całoroczna opieka nad obiektami, posesjami i zielenią. Jeden rzetelny wykonawca, ustalony harmonogram prac sezonowych, gwarancja pierwszeństwa i terminowości.</p>
           </div>
           <div style="margin-top: 20px;">
             <a href="tel:885885177" class="btn btn-primary" style="width: 100%; font-size: 0.875rem; padding: 10px 16px;">
-              Zamów wycenę obiektu
+              Zamów bezpłatną wycenę
             </a>
           </div>
         </article>
       </div>
 
-      <!-- KARTA: I INNE — PROSZĘ PYTAĆ O SWOJE ZAPOTRZEBOWANIA -->
+      <!-- KARTA: I INNE USŁUGI ORAZ PRACE OGRODOWE — PROSZĘ PYTAĆ O SWOJE ZAPOTRZEBOWANIA -->
       <div class="custom-needs-card fade-in-up" id="customNeedsCard">
         <div class="custom-needs-content">
           <div class="custom-needs-badge">✨ Elastyczny zakres prac</div>
-          <h3 class="custom-needs-title">I inne usługi — proszę pytać o swoje zapotrzebowania!</h3>
+          <h3 class="custom-needs-title">I wiele innych prac ogrodowych — proszę pytać o swoje zapotrzebowania!</h3>
           <p class="custom-needs-desc">
-            Nie widzisz na liście usługi, której szukasz? Realizujemy szeroki zakres dodatkowych prac ogrodniczych, ziemnych i porządkowych dopasowanych do indywidualnych życzeń klienta. Zadzwoń lub napisz do nas — opowiedz nam o swoim zapotrzebowaniu, a my przygotujemy bezpłatną, niezobowiązującą wycenę.
+            Nie widzisz na liście konkretnej pracy, której potrzebujesz? Realizujemy szeroki wachlarz dodatkowych prac ogrodniczych, ziemnych, porządkowych, transportowych i technicznych dopasowanych do Twoich indywidualnych potrzeb. Zadzwoń lub napisz do nas — opowiedz o swoim zleceniu, a przygotujemy bezpłatną, niezobowiązującą wycenę!
           </p>
         </div>
         <div class="custom-needs-actions">
@@ -2421,24 +2849,108 @@
     </div>
   </section>
 
-  <!-- O NAS / STANDARD PRACY -->
+  <!-- O NAS / STANDARD PRACY ORAZ MATERIAŁY GRAFICZNE -->
   <section class="about-section content-lazy-render" id="o-nas">
-    <div class="container about-container">
-      <span class="section-eyebrow" style="color: var(--green-light);">O nas</span>
-      
-      <div class="about-pillars fade-in-up">
-        <div class="about-pillar-tag">Rzetelność</div>
-        <div class="about-pillar-tag">Terminowość</div>
-        <div class="about-pillar-tag">Dokładność</div>
+    <div class="container">
+      <div class="about-container">
+        <span class="section-eyebrow" style="color: var(--green-light);">O nas</span>
+        
+        <div class="about-pillars fade-in-up">
+          <div class="about-pillar-tag">Rzetelność</div>
+          <div class="about-pillar-tag">Terminowość</div>
+          <div class="about-pillar-tag">Dokładność</div>
+        </div>
+
+        <p class="about-text fade-in-up">
+          Dbamy o estetykę, porządek i profesjonalny wygląd Twojego otoczenia. Rzetelność, terminowość i dokładność to standard naszej pracy.
+        </p>
+
+        <div class="fade-in-up">
+          <div class="about-quote">
+            „Działamy <span>z pasją.</span>”
+          </div>
+        </div>
       </div>
 
-      <p class="about-text fade-in-up">
-        Dbamy o estetykę, porządek i profesjonalny wygląd Twojego otoczenia. Rzetelność, terminowość i dokładność to standard naszej pracy.
-      </p>
+      <!-- MATERIAŁY GRAFICZNE W ORYGINALNYCH PROPORCJACH -->
+      <div class="promo-materials-section fade-in-up" id="materialy-graficzne">
+        <div class="promo-materials-header">
+          <span class="promo-materials-badge">Oficjalne materiały reklamowe</span>
+          <h3 class="promo-materials-title">Nasza oferta w pigułce — materiały informacyjne</h3>
+          <p class="promo-materials-subtitle">
+            Szczegółowy wykaz prac i materiały promocyjne prezentujące pełen zakres usług firmy w Chełmie i okolicach.
+          </p>
+        </div>
 
-      <div class="fade-in-up">
-        <div class="about-quote">
-          „Działamy <span>z pasją.</span>”
+        <div class="promo-materials-grid">
+          <!-- 1. Baner panoramiczny (1942 x 809 - proporcje ~2.4:1) -->
+          <div class="promo-card promo-card-wide" id="promoCardBanner">
+            <div class="promo-img-wrapper" data-full="https://i.ibb.co/KxyZjLsm/809384873-2094858981418362-2780461997172436832-n.jpg" data-alt="Baner reklamowy — Kompleksowy Serwis Porządkowy & Usługi Ogrodnicze">
+              <img 
+                src="https://i.ibb.co/KxyZjLsm/809384873-2094858981418362-2780461997172436832-n.jpg" 
+                alt="Baner reklamowy — Kompleksowy Serwis Porządkowy & Usługi Ogrodnicze"
+                class="promo-img"
+                loading="lazy"
+                decoding="async"
+                width="1942"
+                height="809"
+              />
+              <div class="promo-overlay">
+                <span class="promo-zoom-badge">🔍 Powiększ grafikę</span>
+              </div>
+            </div>
+            <div class="promo-card-footer">
+              <span class="promo-badge">Baner informacyjny</span>
+              <span class="promo-caption">Oficjalny baner profilowy z zakresem usług porządkowych i ogrodniczych</span>
+            </div>
+          </div>
+
+          <!-- Rząd z dwiema grafikami obok siebie w ich oryginalnych proporcjach -->
+          <div class="promo-row-duo">
+            <!-- 2. Plakat i ulotka pionowa (1024 x 1536 - proporcje 2:3) -->
+            <div class="promo-card promo-card-poster" id="promoCardPoster">
+              <div class="promo-img-wrapper" data-full="https://i.ibb.co/tMBLxgPf/815395832-1437433078274531-8585137337310708706-n.jpg" data-alt="Plakat reklamowy — Kompleksowy Serwis Porządkowy & Usługi Ogrodnicze">
+                <img 
+                  src="https://i.ibb.co/tMBLxgPf/815395832-1437433078274531-8585137337310708706-n.jpg" 
+                  alt="Plakat reklamowy — Kompleksowy Serwis Porządkowy & Usługi Ogrodnicze"
+                  class="promo-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="1024"
+                  height="1536"
+                />
+                <div class="promo-overlay">
+                  <span class="promo-zoom-badge">🔍 Powiększ plakat</span>
+                </div>
+              </div>
+              <div class="promo-card-footer">
+                <span class="promo-badge">Plakat & ulotka</span>
+                <span class="promo-caption">Szczegółowy cennik i wykaz prac ogrodniczych i porządkowych</span>
+              </div>
+            </div>
+
+            <!-- 3. Karta kwadratowa (1254 x 1254 - proporcje 1:1) -->
+            <div class="promo-card promo-card-square" id="promoCardSquare">
+              <div class="promo-img-wrapper" data-full="https://i.ibb.co/prd0fbrd/809978446-1358393209405697-3074197155996841666-n.jpg" data-alt="Karta ofertowa — Kompleksowy Serwis Porządkowy & Usługi Ogrodnicze">
+                <img 
+                  src="https://i.ibb.co/prd0fbrd/809978446-1358393209405697-3074197155996841666-n.jpg" 
+                  alt="Karta ofertowa — Kompleksowy Serwis Porządkowy & Usługi Ogrodnicze"
+                  class="promo-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="1254"
+                  height="1254"
+                />
+                <div class="promo-overlay">
+                  <span class="promo-zoom-badge">🔍 Powiększ grafikę</span>
+                </div>
+              </div>
+              <div class="promo-card-footer">
+                <span class="promo-badge">Karta ofertowa</span>
+                <span class="promo-caption">Bezpośredni kontakt, bezpłatna wycena i szybki dojazd w Chełmie</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2684,19 +3196,33 @@
 
         <!-- Kolumna 2: Skrócona lista usług -->
         <div>
-          <div class="footer-col-title">Zakres usług</div>
+          <div class="footer-col-title">Wyszczególnione usługi</div>
           <ul class="footer-services-grid">
-            <li><a href="#uslugi" class="footer-service-link">🌿 Usługi ogrodnicze</a></li>
-            <li><a href="#uslugi" class="footer-service-link">🧹 Serwis porządkowy</a></li>
-            <li><a href="#uslugi" class="footer-service-link">🚜 Usługi glebogryzarką</a></li>
-            <li><a href="#uslugi" class="footer-service-link">🌱 Trawniki rolka & siew</a></li>
-            <li><a href="#uslugi" class="footer-service-link">🧪 Opryski ochronne</a></li>
-            <li><a href="#uslugi" class="footer-service-link">✂️ Przycinanie krzewów</a></li>
-            <li><a href="#uslugi" class="footer-service-link">🚜 Koszenie trawy</a></li>
-            <li><a href="#uslugi" class="footer-service-link">💦 Mycie kostki i elewacji</a></li>
-            <li><a href="#uslugi" class="footer-service-link">❄️ Odśnieżanie posesji</a></li>
-            <li><a href="#uslugi" class="footer-service-link">✨ Prace na zapotrzebowanie</a></li>
-            <li><a href="#kontakt" class="footer-service-link">🤝 Umowy stałe B2B</a></li>
+            <li><a href="#serviceCardMycieKostki" class="footer-service-link">💦 Mycie kostki brukowej</a></li>
+            <li><a href="#serviceCardCzyszczenieElewacji" class="footer-service-link">🚿 Czyszczenie elewacji</a></li>
+            <li><a href="#serviceCardMycieDachow" class="footer-service-link">🏠 Mycie dachów</a></li>
+            <li><a href="#serviceCardTrawnikiRolkaSiew" class="footer-service-link">🌱 Trawniki rolka & siew</a></li>
+            <li><a href="#serviceCardKoszenieTrawy" class="footer-service-link">🚜 Koszenie trawy</a></li>
+            <li><a href="#serviceCardWertykulacja" class="footer-service-link">🌱 Wertykulacja & aeracja</a></li>
+            <li><a href="#serviceCardNawozenie" class="footer-service-link">🌱 Nawożenie trawników</a></li>
+            <li><a href="#serviceCardGlebogryzarka" class="footer-service-link">🚜 Glebogryzarka (teren)</a></li>
+            <li><a href="#serviceCardPrzycinanieTui" class="footer-service-link">✂️ Przycinanie tuj & żywopłotów</a></li>
+            <li><a href="#serviceCardPrzycinanieDrzew" class="footer-service-link">🌳 Przycinanie drzew & krzewów</a></li>
+            <li><a href="#serviceCardOpryski" class="footer-service-link">🧪 Opryski ochronne</a></li>
+            <li><a href="#serviceCardSadzenie" class="footer-service-link">🌿 Sadzenie drzew & krzewów</a></li>
+            <li><a href="#serviceCardPrzekopywanie" class="footer-service-link">🛠️ Przekopywanie ogródka</a></li>
+            <li><a href="#serviceCardNowySezon" class="footer-service-link">🌞 Przygotowanie na nowy sezon</a></li>
+            <li><a href="#serviceCardPorzadkowanieDzialek" class="footer-service-link">🏡 Porządkowanie działek ROD</a></li>
+            <li><a href="#serviceCardPielegnacjaTerenow" class="footer-service-link">🌿 Pielęgnacja zieleni</a></li>
+            <li><a href="#serviceCardSprzataniePodworka" class="footer-service-link">🧹 Sprzątanie podwórek</a></li>
+            <li><a href="#serviceCardUtrzymaniePorzadku" class="footer-service-link">🏢 Utrzymanie wokół budynków</a></li>
+            <li><a href="#serviceCardWywozLiscie" class="footer-service-link">🍂 Wywóz liści & gałęzi</a></li>
+            <li><a href="#serviceCardWywozMebli" class="footer-service-link">🚛 Wywóz starych mebli</a></li>
+            <li><a href="#serviceCardMalowanie" class="footer-service-link">🎨 Malowanie altan & płotów</a></li>
+            <li><a href="#serviceCardOproznianie" class="footer-service-link">📦 Opróżnianie piwnic & garaży</a></li>
+            <li><a href="#serviceCardRozbiorka" class="footer-service-link">🏗️ Drobne rozbiórki</a></li>
+            <li><a href="#serviceCardSnieg" class="footer-service-link">❄️ Odśnieżanie posesji</a></li>
+            <li><a href="#customNeedsCard" class="footer-service-link">✨ I inne prace na zapytanie</a></li>
           </ul>
         </div>
 
@@ -2852,6 +3378,9 @@
         if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) {
           closeMobileMenu();
         }
+        if (e.key === 'Escape' && promoModal && promoModal.classList.contains('is-open')) {
+          closePromoModal();
+        }
       });
 
       // 4. Płynne wejście sekcji przez IntersectionObserver
@@ -2878,7 +3407,65 @@
           el.classList.add('is-visible');
         });
       }
+
+      // 5. Podgląd powiększenia dla oficjalnych grafik i plakatów
+      var promoModal = document.getElementById('promoModal');
+      var promoModalImg = document.getElementById('promoModalImg');
+      var promoModalCaption = document.getElementById('promoModalCaption');
+      var promoModalClose = document.getElementById('promoModalClose');
+
+      function openPromoModal(src, alt) {
+        if (!promoModal || !promoModalImg) return;
+        promoModalImg.src = src;
+        promoModalImg.alt = alt || '';
+        if (promoModalCaption) promoModalCaption.textContent = alt || '';
+        promoModal.classList.add('is-open');
+        promoModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePromoModal() {
+        if (!promoModal) return;
+        promoModal.classList.remove('is-open');
+        promoModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      var promoTriggers = document.querySelectorAll('.promo-img-wrapper');
+      promoTriggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          var fullSrc = trigger.getAttribute('data-full');
+          var altText = trigger.getAttribute('data-alt');
+          if (fullSrc) {
+            openPromoModal(fullSrc, altText);
+          }
+        });
+      });
+
+      if (promoModalClose) {
+        promoModalClose.addEventListener('click', function (e) {
+          e.stopPropagation();
+          closePromoModal();
+        });
+      }
+
+      if (promoModal) {
+        promoModal.addEventListener('click', function (e) {
+          if (e.target === promoModal) {
+            closePromoModal();
+          }
+        });
+      }
     })();
   </script>
+
+  <!-- MODAL / LIGHTBOX POWIĘKSZENIA GRAFIK -->
+  <div class="promo-modal-backdrop" id="promoModal" aria-hidden="true" role="dialog">
+    <div class="promo-modal-container">
+      <button class="promo-modal-close" id="promoModalClose" aria-label="Zamknij podgląd">✕</button>
+      <img src="" alt="" class="promo-modal-img" id="promoModalImg" />
+      <div class="promo-modal-caption" id="promoModalCaption"></div>
+    </div>
+  </div>
 </body>
 </html>
